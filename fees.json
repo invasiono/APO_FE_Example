@@ -1,0 +1,10 @@
+{
+  "fees": [
+    {"booking_id": "B001", "service_fee": 0, "luxury_tax": 0},
+    {"booking_id": "B002", "service_fee": 20000, "luxury_tax": 0},
+    {"booking_id": "B003", "service_fee": 30000, "luxury_tax": 50000},
+    {"booking_id": "B004", "service_fee": 0, "luxury_tax": 0},
+    {"booking_id": "B005", "service_fee": 25000, "luxury_tax": 60000},
+    {"booking_id": "B006", "service_fee": 15000, "luxury_tax": 0}
+  ]
+}
