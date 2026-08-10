@@ -1,6 +1,8 @@
 # ================ Code here =================
-print("\n[TEST]-----------------------\n")
+print("\nQ2.1-----------------------\n")
 
+
+#2.1-----
 room_file = "room.csv"
 def load_bookings(room_file):
     room_list = []
@@ -19,9 +21,45 @@ bookings = load_bookings(room_file)
 
 def print_bookings(bookings):
     for i in load_bookings(room_file):
-        print(f"{i[0]} {i[2]} {i[3]} Price={i[4]} Nights={i[5]}")
+        print(f"{i[0]} {i[1]} {i[2]} {i[3]} Price={i[4]} Nights={i[5]}")
 
-print_bookings(bookings)
+print("\nQ2.2-----------------------\n")
+
+#2.2----
+import json
+
+fee_file = "fees.json"
+def load_fees(fee_file):
+    fee_dict = {}
+    with open(fee_file, "r") as file:
+        data = json.load(file)
+    
+    for i in data.get("fees", []):
+        fee_dict[i["booking_id"]] = {
+            "service_fee": int(i.get("service_fee", 0)),
+            "luxury_tax": int(i.get("luxury_tax", 0))
+        }
+    return fee_dict
+
+load_fees(fee_file)
+
+print("\nQ2.3-----------------------\n")
+
+fees = load_fees(fee_file)
+def print_bookings_with_total(bookings, fees):
+    for i in bookings:
+        booking_id, room_id, room_type, guest_name, price, nights = i
+        fee_info = fees.get(booking_id, {"service_fee":0, "luxury_tax":0})
+        service_fee = int(fee_info["service_fee"])
+        luxury_tax = int(fee_info["luxury_tax"])
+
+        total = i[4] * i[5] + service_fee + luxury_tax
+        print(f"{i[1]} {i[2]} {i[3]} Price={i[4]} Nights={i[5]} Service_fee={service_fee} Luxury_tax={luxury_tax} -> Total = {total}")
+
+print_bookings_with_total(bookings, fees)
+
+
+
 
 
 
