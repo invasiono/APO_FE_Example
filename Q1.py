@@ -5,7 +5,7 @@ class HotelRoom():
     def __init__(self, room_id, room_type, price_per_night, nights):
         self.room_id = str(room_id)
         self.room_type = str(room_type)
-        self.price_per_night = float(price_per_night)
+        self.price_per_night = int(price_per_night)
         self.nights = int(nights)
 
     # --Methods
@@ -41,7 +41,7 @@ print(f"Price: {obj2.calculate_total()}")
 class DeluxeRoom(HotelRoom):
     def __init__(self, room_id, price_per_night, nights, service_fee):
         super().__init__(room_id, "DeluxeRoom", price_per_night, nights)
-        self.service_fee = float(service_fee)
+        self.service_fee = int(service_fee)
 
     # --Methods
     def calculate_total(self):
@@ -59,8 +59,8 @@ print(f"Price: {obj3.calculate_total()}")
 class SuiteRoom(HotelRoom):
     def __init__(self, room_id, price_per_night, nights, service_fee, luxury_tax):
         super().__init__(room_id, "SuiteRoom", price_per_night, nights)
-        self.service_fee = float(service_fee)
-        self.luxury_tax = float(luxury_tax)
+        self.service_fee = int(service_fee)
+        self.luxury_tax = int(luxury_tax)
 
     # --Methods
     def calculate_total(self):
