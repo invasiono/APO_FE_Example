@@ -1,7 +1,7 @@
 # ================ Code here =================
 print("\n------------------------------------------------------------\n")
 
-class Hotel():
+class HotelRoom():
     def __init__(self, room_id, room_type, price_per_night, nights):
         self.room_id = str(room_id)
         self.room_type = str(room_type)
@@ -17,11 +17,11 @@ class Hotel():
     def display_info(self):
          return f"ID: {self.room_id} | Type: {self.room_type} | P/N: {self.price_per_night} | Nights: {self.nights}" 
 
-obj1 = Hotel("R000","Type",0,0)
+obj1 = HotelRoom("R000","Type",0,0)
 print(obj1.display_info())
 print(f"Price: {obj1.calculate_total()}")
 
-class StandardRoom(Hotel):
+class StandardRoom(HotelRoom):
     def __init__(self, room_id, price_per_night, nights):
         super().__init__(room_id, "StandardRoom", price_per_night, nights)
 
@@ -38,7 +38,7 @@ obj2 = StandardRoom("R001",50000,2)
 print(obj2.display_info())
 print(f"Price: {obj2.calculate_total()}")
 
-class DeluxeRoom(Hotel):
+class DeluxeRoom(HotelRoom):
     def __init__(self, room_id, price_per_night, nights, service_fee):
         super().__init__(room_id, "DeluxeRoom", price_per_night, nights)
         self.service_fee = float(service_fee)
@@ -56,7 +56,7 @@ obj3 = DeluxeRoom("R002",10000,3,35000)
 print(obj3.display_info())
 print(f"Price: {obj3.calculate_total()}")
 
-class SuiteRoom(Hotel):
+class SuiteRoom(HotelRoom):
     def __init__(self, room_id, price_per_night, nights, service_fee, luxury_tax):
         super().__init__(room_id, "SuiteRoom", price_per_night, nights)
         self.service_fee = float(service_fee)
