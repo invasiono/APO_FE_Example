@@ -43,8 +43,6 @@ def load_fees(fee_file):
 
 load_fees(fee_file)
 
-print("\nQ2.3-----------------------\n")
-
 fees = load_fees(fee_file)
 def print_bookings_with_total(bookings, fees):
     for i in bookings:
@@ -58,6 +56,7 @@ def print_bookings_with_total(bookings, fees):
 
 print_bookings_with_total(bookings, fees)
 
+print("\nQ2.3-----------------------\n")
 
 
 
