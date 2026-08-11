@@ -1,5 +1,5 @@
 # ================ Code here =================
-print("\nQ2.1-----------------------\n")
+print("\n-----------------------\n")
 
 
 #2.1-----
@@ -17,13 +17,9 @@ def load_bookings(room_file):
 
     return room_list
 
-bookings = load_bookings(room_file)
-
 def print_bookings(bookings):
-    for i in load_bookings(room_file):
+    for i in bookings:
         print(f"{i[0]} {i[1]} {i[2]} {i[3]} Price={i[4]} Nights={i[5]}")
-
-print("\nQ2.2-----------------------\n")
 
 #2.2----
 import json
@@ -41,9 +37,6 @@ def load_fees(fee_file):
         }
     return fee_dict
 
-load_fees(fee_file)
-
-fees = load_fees(fee_file)
 def print_bookings_with_total(bookings, fees):
     for i in bookings:
         booking_id, room_id, room_type, guest_name, price, nights = i
@@ -52,16 +45,25 @@ def print_bookings_with_total(bookings, fees):
         luxury_tax = int(fee_info["luxury_tax"])
 
         total = i[4] * i[5] + service_fee + luxury_tax
-        print(f"{i[1]} {i[2]} {i[3]} Price={i[4]} Nights={i[5]} Service_fee={service_fee} Luxury_tax={luxury_tax} -> Total = {total}")
+        print(f"{i[0]} {i[1]} {i[2]} {i[3]} Price={i[4]} Nights={i[5]} Service_fee={service_fee} Luxury_tax={luxury_tax} -> Total = {total}")
 
-print_bookings_with_total(bookings, fees)
+def print_filtered_bookings(bookings, fees):
+    filter_list = []
+    for i in bookings:
+            booking_id, room_id, room_type, guest_name, price, nights = i
+            
+            fee_info = fees.get(booking_id, {"service_fee":0, "luxury_tax":0})
+            service_fee = int(fee_info["service_fee"])
+            luxury_tax = int(fee_info["luxury_tax"])
+    
+            total = i[4] * i[5] + service_fee + luxury_tax
+            if total > 100000:
+                filter_list.append((booking_id, room_id, room_type, guest_name, total))
 
-print("\nQ2.3-----------------------\n")
+    filter_list.sort(key=lambda item: item[4], reverse=True)
 
-
-
-
-
+    for i in filter_list:
+        print(f"{i[0]} {i[1]} {i[2]} {i[3]} total={i[4]}")
 
 
 print("\n[RESULT]-----------------------\n")
