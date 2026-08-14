@@ -81,7 +81,6 @@ print("\n[RESULT]------------------------------------------------------------\n"
 
 # ===============Do not edit the code below================
 def main() -> None:
-    pass
     rooms: list[HotelRoom] = [
         StandardRoom("R001", 500000, 2),
         DeluxeRoom("R002", 800000, 3, 120000),
