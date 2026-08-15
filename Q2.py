@@ -1,9 +1,6 @@
 # ================ Code here =================
-print("\n-----------------------\n")
-
 
 #2.1-----
-room_file = "room.csv"
 def load_bookings(room_file):
     room_list = []
     with open(room_file, "r") as file:
@@ -11,9 +8,15 @@ def load_bookings(room_file):
         for line in file:
             info = line.strip().split(",")
 
-            booking_id, room_id, room_type, guest_name, price, nights = info[0], info[1], info[2], info[5], int(info[3]), int(info[4])
-            obj = booking_id, room_id, room_type, guest_name, price, nights
-            room_list.append(obj)
+            booking_id = info[0]
+            room_id = info[1]
+            room_type = info[2]
+            price = int(info[3])
+            nights = int(info[4])
+            guest_name = info[5]
+
+            booking = (booking_id, room_id, room_type, guest_name, price, nights)
+            room_list.append(booking)
 
     return room_list
 
@@ -65,8 +68,6 @@ def print_filtered_bookings(bookings, fees):
     for i in filter_list:
         print(f"{i[0]} {i[1]} {i[2]} {i[3]} total={i[4]}")
 
-
-print("\n[RESULT]-----------------------\n")
 
 # ============================================
 
