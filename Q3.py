@@ -10,22 +10,18 @@ def create_app():
         info3 = entry3.get()
 
         if info1 and info2 and info3 != None:
-            print("Filled")
             result.config(text=f"Booking added: {info1} - {info2} - {info3} nights")
-            root.after(2000, lambda:result.config(text=""))
+            root.after(2000, lambda:result.config(text=" "))
         else:
-            print("Not full")
-            result.config(text="Oh No!")
-            root.after(2000, lambda:result.config(text=""))
+            result.config(text="Please fill all the entries")
+            root.after(2000, lambda:result.config(text=" "))
         pass
 
     def clear_button():
-        print("Pressed")
         entry1.delete(0, tk.END)
         entry2.delete(0, tk.END)
         entry3.delete(0, tk.END)
         result.config(text="Ready!")
-        root.after(2000, lambda:result.config(text=""))
 
     root = tk.Tk()
     root.title("Hotel Booking App")
@@ -43,13 +39,13 @@ def create_app():
     entry3.grid(row=2, column=1)
 
     enter_button = tk.Button(root, text="Add Booking", width=20, command=entry_info)
-    enter_button.grid(row=3, column=1)
+    enter_button.grid(row=4, column=1)
 
-    result = tk.Label(root, text="")
-    result.grid(row=4, column=1)
+    result = tk.Label(root, text="Ready")
+    result.grid(row=3, column=1)
 
     clear = tk.Button(root, text="Clear", width=20, command=clear_button)
-    clear.grid(row=3, column=2)
+    clear.grid(row=4, column=2)
 
     return root
 # ============================================
