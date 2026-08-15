@@ -13,7 +13,7 @@ class HotelRoom():
         return total
 
     def display_info(self):
-         return f"ID: {self.room_id} | Type: {self.room_type} | P/N: {self.price_per_night} | Nights: {self.nights}" 
+         return f"{self.room_id} {self.room_type} price={self.price_per_night} nights={self.nights}" 
 
 class StandardRoom(HotelRoom):
     def __init__(self, room_id, price_per_night, nights):
@@ -26,7 +26,7 @@ class StandardRoom(HotelRoom):
         return total
 
     def display_info(self):
-         return f"ID: {self.room_id} | Type: {self.room_type} | P/N: {self.price_per_night} | Nights: {self.nights}" 
+         return f"{self.room_id} {self.room_type} price={self.price_per_night} nights={self.nights}" 
 
 class DeluxeRoom(HotelRoom):
     def __init__(self, room_id, price_per_night, nights, service_fee):
@@ -40,7 +40,7 @@ class DeluxeRoom(HotelRoom):
         return total
 
     def display_info(self):
-         return f"ID: {self.room_id} | Type: {self.room_type} | P/N: {self.price_per_night} | Nights: {self.nights} | Service: {self.service_fee}" 
+         return f"{self.room_id} {self.room_type} price={self.price_per_night} nights={self.nights} service_fee={self.service_fee}" 
 
 class SuiteRoom(HotelRoom):
     def __init__(self, room_id, price_per_night, nights, service_fee, luxury_tax):
@@ -55,7 +55,7 @@ class SuiteRoom(HotelRoom):
         return total
 
     def display_info(self):
-         return f"ID: {self.room_id} | Type: {self.room_type} | P/N: {self.price_per_night} | Nights: {self.nights} | Service: {self.service_fee} | Luxury Tax: {self.luxury_tax}" 
+         return f"{self.room_id} {self.room_type} price={self.price_per_night} nights={self.nights} service_fee={self.service_fee} luxury_tax={self.luxury_tax}" 
     
 # ============================================
 
