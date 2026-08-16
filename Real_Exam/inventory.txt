@@ -1,0 +1,12 @@
+Inventory report - April
+Product: Wireless Mouse | Price: 18.50 | Stock: 12 | SoldLastMonth: 45
+Product: Mechanical Keyboard | Price: 72.00 | Stock: 8 | SoldLastMonth: 18
+Product: USB-C Hub | Price: 35.50 | Stock: 25 | SoldLastMonth: 40
+Product: Laptop Stand | Price: 28.00 | Stock: 15 | SoldLastMonth: 32
+Product: Webcam | Price: 54.00 | Stock: 6 | SoldLastMonth: 50
+Product: Monitor | Price: 210.00 | Stock: 10 | SoldLastMonth: 12
+Product: Headset | Price: 65.50 | Stock: 30 | SoldLastMonth: 28
+Product: Portable SSD 1TB | Price: 95.00 | Stock: 18 | SoldLastMonth: 36
+Product: HDMI Cable | Price: 12.75 | Stock: 60 | SoldLastMonth: 75
+Product: Desk Lamp | Price: 42.00 | Stock: 14 | SoldLastMonth: 20
+End of inventory report
